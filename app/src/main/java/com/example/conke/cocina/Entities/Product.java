@@ -8,8 +8,19 @@ public class Product {
     private String productName;
     private String productDescription;
     private Float productCost;
+    private int ProductQTY;
 
     public Product() {
+
+    }
+
+
+
+    public Product(Integer productId, Integer supplierId, String productName, Float productCost) {
+        this.productId = productId;
+        this.supplierId = supplierId;
+        this.productName = productName;
+        this.productCost = productCost;
     }
 
     public Product(Integer productId, Integer supplierId, String productName, String productDescription, Float productCost) {
@@ -19,6 +30,7 @@ public class Product {
         this.productDescription = productDescription;
         this.productCost = productCost;
     }
+
 
     public Integer getProductId() {
         return productId;
@@ -58,5 +70,13 @@ public class Product {
 
     public void setProductCost(Float productCost) {
         this.productCost = productCost;
+    }
+
+    public int getProductQTY() {
+        return ProductQTY;
+    }
+
+    public void setProductQTY(int productQTY) {
+        ProductQTY = productQTY;
     }
 }

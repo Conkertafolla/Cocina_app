@@ -5,6 +5,7 @@ public class Store {
     private Integer storeId;
     private String storeName;
 
+
     public Store(){
 
     }

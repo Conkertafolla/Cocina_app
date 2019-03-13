@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.conke.cocina.Entities.usuario;
+import com.example.conke.cocina.SQL.SQLHelper;
+import com.example.conke.cocina.SQL.SQLQueries;
 
 
 public class LoginActivity extends AppCompatActivity {
     EditText password;
     EditText mailUser;
+    boolean loadData;
 
 
 
@@ -24,9 +26,12 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
         //Create the local database
-          SQLHelper conection = new SQLHelper(this,"db_order",null,1);
+        SQLHelper conection = new SQLHelper(this,"db_order",null,1);
         SQLQueries queries  = new SQLQueries(this);
+        loadData= queries.loadDefault();
+        if(!loadData){
         queries.setDefaultValues();
+        }
 
 
     }

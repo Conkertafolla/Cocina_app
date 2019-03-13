@@ -7,11 +7,11 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/side_order"
-            android:title="Import" />
+            android:title="Proveedores" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/add_order"
-            android:title="Gallery" />
+            android:title="Ordenes" />
     </group>
 
     <item android:title="Communicate">

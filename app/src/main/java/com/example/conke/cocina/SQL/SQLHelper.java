@@ -1,4 +1,4 @@
-package com.example.conke.cocina;
+package com.example.conke.cocina.SQL;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -30,11 +30,21 @@ public class SQLHelper extends SQLiteOpenHelper {
     private void dropTables(SQLiteDatabase db) {
         db.execSQL(Utilities.DROP_USERS);
         db.execSQL(Utilities.DROP_STORES);
+        db.execSQL(Utilities.DROP_SYSTEM);
+        db.execSQL(Utilities.DROP_SUPPLIER);
+        db.execSQL(Utilities.DROP_PRODUCT);
+        db.execSQL(Utilities.DROP_ORDER);
+        db.execSQL(Utilities.DROP_ORDER_PRODUCT);
     }
 
     public void createTables(SQLiteDatabase db){
         db.execSQL(Utilities.CREATE_STORE_TABLE);
         db.execSQL(Utilities.CREATE_USERS_TABLE);
+        db.execSQL(Utilities.CREATE_SYSTEM_TABLE);
+        db.execSQL(Utilities.CREATE_SUPPLIER_TABLE);
+        db.execSQL(Utilities.CREATE_PRODUCT_TABLE);
+        db.execSQL(Utilities.CREATE_ORDER_TABLE);
+        db.execSQL(Utilities.CREATE_ORDER_PRODUCT_TABLE);
     }
 
 }
