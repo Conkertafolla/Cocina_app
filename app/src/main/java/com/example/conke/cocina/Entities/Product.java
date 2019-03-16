@@ -15,6 +15,11 @@ public class Product {
     }
 
 
+    public Product(Integer supplierId, String productName, Float productCost) {
+        this.supplierId = supplierId;
+        this.productName = productName;
+        this.productCost = productCost;
+    }
 
     public Product(Integer productId, Integer supplierId, String productName, Float productCost) {
         this.productId = productId;

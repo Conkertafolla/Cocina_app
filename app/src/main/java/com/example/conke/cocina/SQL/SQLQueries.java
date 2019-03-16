@@ -102,14 +102,50 @@ public class SQLQueries {
         long fristStore=1;
         Store store= new Store("Polanco");
         insertStore(store);
-        usuario user = new usuario(((int) fristStore),"Gerado Tafolla","conkertafolla2.0@gmail.com","Password123");
+        usuario user = new usuario(((int) fristStore),"Mariana Chaparro","mariana.chaparro3@gmail.com","Avaya2019 ");
         insertUser(user);
         Supplier supplier = new Supplier("Costco","costco");
         insertSupplier(supplier);
-        supplier = new Supplier("Soriana","soriana");
+        supplier = new Supplier("Central de Abastos","central");
         insertSupplier(supplier);
-        supplier = new Supplier("Esperanza","esperanza");
-        insertSupplier(supplier);
+        Product product = new Product(1,"Aceite(Galon)",100.0f);
+        insertProduct(product);
+        product = new Product(1,"Mayonesa(Galon)",125.0f);
+        insertProduct(product);
+        product = new Product(1,"Chipotle (Paq. 6)",100.0f);
+        insertProduct(product);
+        product = new Product(1,"Mostaza(Bote)",67.5f);
+        insertProduct(product);
+        product = new Product(1,"Catsup (Paq. 2pzas)",70.0f);
+        insertProduct(product);
+        product = new Product(1,"Tenedores",149.0f);
+        insertProduct(product);
+        product = new Product(1,"Desengrasante",270.0f);
+        insertProduct(product);
+        product = new Product(1,"Guantes (Paq. 2 cajas)",500.0F);
+        insertProduct(product);
+        product = new Product(2,"Caja Jitomate",220f);
+        insertProduct(product);
+        product = new Product(2,"Cebolla Blanca (Kg)",25f);
+        insertProduct(product);
+        product = new Product(2,"Cebolla Morada (Kg)",19f);
+        insertProduct(product);
+        product = new Product(2,"Limon (Caja)",550f);
+        insertProduct(product);
+        product = new Product(2,"Jalapeño (Caja)",29f);
+        insertProduct(product);
+        product = new Product(2,"Cilantro",5f);
+        insertProduct(product);
+        product = new Product(2,"Chile de arbol(Kg)",100f);
+        insertProduct(product);
+        product = new Product(2,"Harina (Paq. 10 pzas.)",200f);
+        insertProduct(product);
+        product = new Product(2,"Chile Habanero(Kg)",60f);
+        insertProduct(product);
+        product = new Product(2,"Queso",200f);
+        insertProduct(product);
+
+
         isFrist();
 
     }
@@ -155,6 +191,28 @@ public class SQLQueries {
         }
         db.close();
         return userID;
+
+    }
+
+    public long insertProduct(Product product){
+        long producId;
+        SQLHelper connection=getConection();
+        SQLiteDatabase db= connection.getWritableDatabase();
+        ContentValues register= new ContentValues();
+        register.put(Utilities.PRODUCT_NAME,product.getProductName());
+        register.put(Utilities.PRODUCT_COST,product.getProductCost());
+        register.put(Utilities.SUPPLIER_ID,product.getSupplierId());
+        producId=db.insert(Utilities.TABLE_PRODUCT,Utilities.ID_PRODUCT,register);
+
+        if (producId == -1){
+            Toast.makeText(queryContext,"Registro Erroneo Producto", Toast.LENGTH_LONG);
+        }
+        else {
+            Toast.makeText(queryContext, "Registro Exitoso", Toast.LENGTH_LONG);
+            Log.d("SQL","Insert Exitoso");
+        }
+        db.close();
+        return producId;
 
     }
 
