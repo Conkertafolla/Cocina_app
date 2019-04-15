@@ -102,7 +102,7 @@ public class SQLQueries {
         long fristStore=1;
         Store store= new Store("Polanco");
         insertStore(store);
-        usuario user = new usuario(((int) fristStore),"Mariana Chaparro","mariana.chaparro3@gmail.com","Avaya2019 ");
+        usuario user = new usuario(((int) fristStore),"Mariana Chaparro","mariana.chaparro3@gmail.com","Avaya2019");
         insertUser(user);
         Supplier supplier = new Supplier("Costco","costco");
         insertSupplier(supplier);

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Cocina.iml" filepath="$PROJECT_DIR$/Cocina.iml" />
+      <module fileurl="file://C:\Users\conke\AndroidStudioProjects\Cocina_app\Cocina.iml" filepath="C:\Users\conke\AndroidStudioProjects\Cocina_app\Cocina.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Cocina_app.iml" filepath="$PROJECT_DIR$/.idea/Cocina_app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
